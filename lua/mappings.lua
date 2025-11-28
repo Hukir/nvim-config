@@ -64,3 +64,8 @@ vim.api.nvim_create_autocmd({ "BufWipeout", "BufUnload", "BufDelete" }, {
   end,
 })
 
+-- === Complétion LSP simple avec <C-Space> ===
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.o.omnifunc = "v:lua.vim.lsp.omnifunc"
+
+map("i", "<C-Space>", "<C-x><C-o>", { desc = "LSP omni completion" })
